@@ -30,8 +30,18 @@ for k in range(tp):
 	pdic[k][4] = str(turnaround)
         starttime += int(pdic[k][2])
 
+awt  = 0 #Average waiting time
+atat = 0 #Average turnaround time
+for k in range(tp):
+	awt  += int(pdic[k][3])
+	atat += int(pdic[k][4])
+
+
 print ("Process name  Arrival time  Burst time  Waiting time  Turnaround time")
 i = 0
 while i < tp:
     print '    ',pdic[i][0],'          ',pdic[i][1],'          ',pdic[i][2],'          ',pdic[i][3],'          ',pdic[i][4]
     i += 1
+
+print ("Averade waiting time is %d" %(awt/tp))
+print ("Average turnarount time is %d" %(atat/tp))
